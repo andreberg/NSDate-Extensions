@@ -221,6 +221,15 @@
 	return dTime;
 }
 
+- (NSString *) stringForOffsetFromDate:(NSDate *)date formatterTemplate:(NSString *)dateFormatterTemplate {
+    NSDateComponents * dTime = [self componentsWithOffsetFromDate:date];
+    NSDate * dDate = [CURRENT_CALENDAR dateFromComponents:dTime];
+    NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
+    [formatter setLocale:CURRENT_LOCALE];
+    [formatter setDateFormat:dateFormatterTemplate];
+    return [formatter stringFromDate:dDate];
+}
+
 #pragma mark Retrieving Intervals
 
 - (NSInteger) minutesAfterDate: (NSDate *) aDate

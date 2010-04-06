@@ -48,6 +48,8 @@
 - (NSDate *) dateByAddingMinutes: (NSUInteger) dMinutes;
 - (NSDate *) dateBySubtractingMinutes: (NSUInteger) dMinutes;
 - (NSDate *) dateAtStartOfDay;
+- (NSDateComponents *) componentsWithOffsetFromDate: (NSDate *) aDate;
+- (NSString *) stringForOffsetFromDate:(NSDate *)date formatterTemplate:(NSString *)dateFormatterTemplate;
 
 // Retrieving intervals
 - (NSInteger) minutesAfterDate: (NSDate *) aDate;
